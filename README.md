@@ -1,6 +1,6 @@
 # MofidBot
 
-MofidBot is an automated system designed to streamline the process of buying and selling on the [Mofid Online platform](https://t.mofidonline.com/). With MofidBot, you can define custom prices in a `.txt` file for selling. Note that the **selling functionality is untested**, while the **buying functionality has been tested** and works as expected.
+MofidBot is an automated system designed to streamline the process of buying and selling on the [Mofid Online platform](https://t.mofidonline.com/). With MofidBot, you can define custom prices in a `.js` file for selling. Note that the **selling functionality is untested**, while the **buying functionality has been tested** and works as expected.
 
 ### How to Use
 
@@ -8,7 +8,7 @@ MofidBot is an automated system designed to streamline the process of buying and
    To use MofidBot, paste the provided code into your browser’s console. If pasting doesn’t work, enable pasting by typing `allow pasting` into the console.
 
 2. **Setup Prices**:  
-   You can define custom buying and selling prices in the `.txt` file provided.
+   You can define custom buying and selling prices in the `.js` file provided.
 
 ### Important Notes
 
