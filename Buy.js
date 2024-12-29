@@ -8,7 +8,7 @@
   // Interval delay (milliseconds)
   const INTERVAL_MS = 350;
   // How long to run before automatically stopping (milliseconds)
-  const STOP_AFTER = 5000;
+  const STOP_AFTER = 7000;
 
   // A helper to emulate typing character by character
   function emulateTyping(element, text) {
@@ -106,7 +106,7 @@
     console.log(`Typed "${priceValue}" into price input (:r2:).`);
 
     // 3) Click the Buy button
-    const buyButton = document.querySelector("button.css-13rpnxo");
+    const buyButton = document.querySelector("button.online-tools-13rpnxo");
     if (buyButton) {
       buyButton.click();
       console.log("Buy button clicked.");
@@ -115,7 +115,7 @@
     }
   }, INTERVAL_MS);
 
-  // Auto-stop after 5 seconds
+  // Auto-stop after 7 seconds
   setTimeout(() => stopAll("Script ended after time limit."), STOP_AFTER);
 
   function stopAll(message) {
