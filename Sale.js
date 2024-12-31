@@ -90,7 +90,7 @@
   // We store our auto-stop timeout ID so we can clear it if we stop early
   const autoStopId = setTimeout(() => stopAll("Script ended after time limit."), STOP_AFTER);
 
-  // Repeatedly set values & click the buy button
+  // Repeatedly set values & click the Sale button
   const intervalId = setInterval(() => {
     // 1) Check valueInput range
     if (!isWithinRange(valueInput, valueStr)) {
@@ -112,13 +112,13 @@
     emulateTyping(priceInput, priceValue);
     console.log(`Typed "${priceValue}" into price input (:r5:).`);
 
-    // 3) Click the Buy button
-    const buyButton = document.querySelector("button.online-tools-sncy46");
-    if (buyButton) {
-      buyButton.click();
-      console.log("Buy button clicked.");
+    // 3) Click the Sale button
+    const saleButton = document.querySelector("button.online-tools-sncy46");
+    if (saleButton) {
+      saleButton.click();
+      console.log("Sale button clicked.");
     } else {
-      console.log("Buy button not found.");
+      console.log("Sale button not found.");
     }
   }, INTERVAL_MS);
 
