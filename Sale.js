@@ -90,7 +90,7 @@
   // We store our auto-stop timeout ID so we can clear it if we stop early
   const autoStopId = setTimeout(() => stopAll("Script ended after time limit."), STOP_AFTER);
 
-  // Repeatedly set values & click the Sale button
+  // Repeatedly set values & click the sale button
   const intervalId = setInterval(() => {
     // 1) Check valueInput range
     if (!isWithinRange(valueInput, valueStr)) {
