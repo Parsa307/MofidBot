@@ -2,8 +2,8 @@
   console.log("Script started.");
 
   // The values you want to type (ensure they're within min/max)
-  const valueStr  = "2000";  // For :r1: (tedad)
-  const priceValue = "3001"; // For :r2: (price)
+  const valueStr  = "2000";  // For :r4: (tedad)
+  const priceValue = "3000";  // For :r5: (price)
 
   // Interval delay (milliseconds)
   const INTERVAL_MS = 350;
@@ -75,51 +75,57 @@
   }
 
   // Select inputs by their IDs (with colons)
-  const valueInput = document.getElementById(":r1:");  // tedad
-  const priceInput = document.getElementById(":r2:");  // price
+  const valueInput = document.getElementById(":r4:");  // tedad
+  const priceInput = document.getElementById(":r5:");  // price
 
   if (!valueInput) {
-    console.log("Value input (:r1:) not found.");
+    console.log("Value input (:r4:) not found.");
     return;
   }
   if (!priceInput) {
-    console.log("Price input (:r2:) not found.");
+    console.log("Price input (:r5:) not found.");
     return;
   }
 
-  // Repeatedly set values & click the sale button
+  // We store our auto-stop timeout ID so we can clear it if we stop early
+  const autoStopId = setTimeout(() => stopAll("Script ended after time limit."), STOP_AFTER);
+
+  // Repeatedly set values & click the buy button
   const intervalId = setInterval(() => {
     // 1) Check valueInput range
     if (!isWithinRange(valueInput, valueStr)) {
+      // Stop script and clear the auto-stop (so we don't see "time limit" message later)
+      clearTimeout(autoStopId);
       stopAll("Value is out of range. Stopping script.");
       return;
     }
     emulateTyping(valueInput, valueStr);
-    console.log(`Typed "${valueStr}" into input (:r1:).`);
+    console.log(`Typed "${valueStr}" into input (:r4:).`);
 
     // 2) Check priceInput range
     if (!isWithinRange(priceInput, priceValue)) {
+      // Stop script and clear the auto-stop (so we don't see "time limit" message later)
+      clearTimeout(autoStopId);
       stopAll("Price value is out of range. Stopping script.");
       return;
     }
     emulateTyping(priceInput, priceValue);
-    console.log(`Typed "${priceValue}" into price input (:r2:).`);
+    console.log(`Typed "${priceValue}" into price input (:r5:).`);
 
-    // 3) Click the Sale button
-    const saleButton = document.querySelector("button.online-tools-sncy46");
-    if (saleButton) {
-      saleButton.click();
-      console.log("Sale button clicked.");
+    // 3) Click the Buy button
+    const buyButton = document.querySelector("button.online-tools-sncy46");
+    if (buyButton) {
+      buyButton.click();
+      console.log("Buy button clicked.");
     } else {
-      console.log("Sale button not found.");
+      console.log("Buy button not found.");
     }
   }, INTERVAL_MS);
 
-  // Auto-stop after 7 seconds
-  setTimeout(() => stopAll("Script ended after time limit."), STOP_AFTER);
-
   function stopAll(message) {
+    // Stop the interval
     clearInterval(intervalId);
+    // Log/alert
     console.log(message);
     alert(message);
   }
