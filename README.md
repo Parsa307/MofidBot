@@ -1,6 +1,6 @@
 ## MofidBot
 
-**MofidBot** is an automated system designed to streamline the process of buying and selling on the Mofid Online platform. With MofidBot, you can define custom prices in a `.js` file for selling. Note that the selling functionality is untested, while the buying functionality has been tested and works as expected.
+**idk** is an automated system designed to streamline the process of buying and selling on the Mofid Online platform. With MofidBot, you can define custom prices in a `.js` file for selling. Note that the selling functionality is untested, while the buying functionality has been tested and works as expected.
 
 ### How to Use
 
