@@ -2,8 +2,8 @@
   console.log("Script started.");
 
   // The values you want to type (ensure they're within min/max)
-  const valueStr  = "2000";  // For :r1: (tedad)
-  const priceValue = "3000";  // For :r2: (price)
+  const valueStr  = "2000";  // For (value)
+  const priceValue = "3000";  // For (price)
 
   // Interval delay (milliseconds)
   const INTERVAL_MS = 350;
@@ -75,15 +75,15 @@
   }
 
   // Select inputs by their IDs (with colons)
-  const valueInput = document.getElementById(":r1:");  // tedad
-  const priceInput = document.getElementById(":r2:");  // price
+  const valueInput = document.getElementById(":r0:");  // value
+  const priceInput = document.getElementById(":r1:");  // price
 
   if (!valueInput) {
-    console.log("Value input (:r1:) not found.");
+    console.log("Value input not found.");
     return;
   }
   if (!priceInput) {
-    console.log("Price input (:r2:) not found.");
+    console.log("Price input not found.");
     return;
   }
 
@@ -100,7 +100,7 @@
       return;
     }
     emulateTyping(valueInput, valueStr);
-    console.log(`Typed "${valueStr}" into input (:r1:).`);
+    console.log(`Typed "${valueStr}" into value input.`);
 
     // 2) Check priceInput range
     if (!isWithinRange(priceInput, priceValue)) {
@@ -110,7 +110,7 @@
       return;
     }
     emulateTyping(priceInput, priceValue);
-    console.log(`Typed "${priceValue}" into price input (:r2:).`);
+    console.log(`Typed "${priceValue}" into price input.`);
 
     // 3) Click the Buy button
     const buyButton = document.querySelector("button.online-tools-13rpnxo");

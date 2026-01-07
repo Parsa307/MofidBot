@@ -10,12 +10,3 @@
 
 2. **Setup Prices:**
    - Define custom buying and selling prices in the provided `.js` file.
-
-### Important Notes
-
-- **For Educational Use:**
-  - MofidBot was created primarily for educational purposes and to demonstrate automation on websites.
-
-- **Safety Warning:**
-  - If you have any concerns about the code’s safety, feel free to review it thoroughly before running.
-  - Only execute code from trusted sources.
